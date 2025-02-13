@@ -13,7 +13,6 @@ Watch the [Demo Video](https://github.com/samuelh-arion/The-Forge-25.1-Spike-Voi
 - Confirmation status tracking
 - Tool call logging
 - Secure API key handling through Cloudflare Workers
-- Beautiful and responsive UI
 
 ## Technology Stack
 
@@ -98,7 +97,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Credits
 
 - Original Project: [talk-to-javascript-openai-workers](https://github.com/craigsdennis/talk-to-javascript-openai-workers) by Craig Dennis
-- Modified by: SureName team (Nati Vallejo and Samuel Heinrichs)
 
 ## License
 
