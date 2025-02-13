@@ -1,36 +1,105 @@
-# Client Side Tool Calling with the OpenAI WebRTC Realtime API
+# Voice-Controlled Name Confirmation List
 
-This project is a [Cloudflare Workers](https://developers.cloudflare.com) app using [Hono](https://honojs.dev) to relay the [OpenAI Realtime API](https://platform.openai.com/docs/api-reference/realtime) over WebRTC. The main files are just [static assets](https://developers.cloudflare.com/workers/static-assets/).
+A web application that uses OpenAI's WebRTC Realtime API to manage a voice-controlled name confirmation list. This project is a fork of [talk-to-javascript-openai-workers](https://github.com/craigsdennis/talk-to-javascript-openai-workers) by Craig Dennis, modified by the SureName team (Nati Vallejo and Samuel Heinrichs) for the Forge 25.1 Spike.
 
-[<img src="https://img.youtube.com/vi/TcOytsfva0o/0.jpg">](https://youtu.be/TcOytsfva0o "Client Side Tool Calling with the OpenAI WebRTC Realtime API")
+## Demo
 
+Watch the [Demo Video](https://github.com/samuelh-arion/The-Forge-25.1-Spike-Voice-Recognition-Generation/raw/refs/heads/main/demo.webm) to see the voice-controlled name confirmation list in action.
 
-## Develop
+## Features
 
-Copy [.dev.vars.example](./.dev.vars.example) to `.dev.vars` and fill out your OpenAI API Key.
+- Voice-controlled interface for managing names
+- Real-time name list updates
+- Confirmation status tracking
+- Tool call logging
+- Secure API key handling through Cloudflare Workers
+- Beautiful and responsive UI
 
-Install your dependencies
+## Technology Stack
+
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/) for backend services
+- [Hono](https://honojs.dev) for API routing
+- [OpenAI Realtime API](https://platform.openai.com/docs/api-reference/realtime) for voice processing
+- WebRTC for real-time communication
+- Vanilla JavaScript for frontend functionality
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+- OpenAI API key
+- Cloudflare account (for deployment)
+
+### Development Setup
+
+1. Clone the repository:
+
+```bash
+git https://github.com/samuelh-arion/The-Forge-25.1-Spike-Voice-Recognition-Generation.git
+cd The-Forge-25.1-Spike-Voice-Recognition-Generation
+```
+
+2. Copy the environment variables example file:
+
+```bash
+cp .dev.vars.example .dev.vars
+```
+
+3. Add your OpenAI API key to `.dev.vars`
+
+4. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Run local server
+5. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-## Deploy
+### Deployment
 
-Upload your secret
+1. Set up your OpenAI API key in Cloudflare:
 
 ```bash
 npx wrangler secret put OPENAI_API_KEY
 ```
 
+2. Deploy to Cloudflare Workers:
+
 ```bash
 npm run deploy
 ```
 
-The hand is a [HiWonder AI Hand](https://www.hiwonder.com/products/aihand?variant=41022039654487). AI and I reverse-engineered the mobile app to make it work over Bluetooth, see [the code in hand.js](./public/hand.js)
+## Features
+
+### Voice Commands
+
+The application supports various voice commands to:
+
+- Add new names to the list
+- Update existing names
+- Delete names
+- Confirm names
+- Get the current list of names
+- End the conversation
+
+### Tool Logging
+
+All tool calls are logged in real-time, providing transparency about the system's operations and helping with debugging.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Credits
+
+- Original Project: [talk-to-javascript-openai-workers](https://github.com/craigsdennis/talk-to-javascript-openai-workers) by Craig Dennis
+- Modified by: SureName team (Nati Vallejo and Samuel Heinrichs)
+
+## License
+
+This project is licensed under the same terms as the original project by Craig Dennis.
