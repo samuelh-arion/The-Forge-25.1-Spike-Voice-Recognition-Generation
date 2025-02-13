@@ -1,26 +1,179 @@
-/* Ensure the body takes up the full height */
-body {
-    margin: 0;
+/* Layout */
+.container {
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
     min-height: 100vh;
 }
 
-/* Main content should expand to fill available space */
+/* Main content */
 .content {
     flex: 1;
+    min-width: 0; /* Prevents flex item from overflowing */
 }
 
-/* Sticky footer styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+/* Tool Log */
+.tool-log {
+    width: 400px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    height: calc(100vh - 120px);
     position: sticky;
-    bottom: 0;
+    top: 20px;
+    overflow-y: auto;
+}
+
+.tool-log h2 {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+#toolLog {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+
+.tool-call {
+    background: white;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+.tool-call .timestamp {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-call .function-name {
+    color: #0066cc;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tool-call .parameters {
+    color: #333;
+    font-family: monospace;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.tool-call .result {
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tool-call .success {
+    color: #198754;
+}
+
+.tool-call .error {
+    color: #dc3545;
+}
+
+/* Ensure the body takes up the full height */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#namesList {
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+    color: #666;
 }
 
 footer a {
-	color: #fff;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .tool-log {
+        width: auto;
+        height: 400px;
+        position: static;
+    }
+}
+
+.audio-controls {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.audio-controls h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.audio-controls audio {
+    width: 100%;
+    margin-bottom: 1rem;
 }
